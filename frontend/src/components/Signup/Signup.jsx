@@ -61,11 +61,11 @@ const Signup = () => {
     }
   };
 
-  const onSuccess (res) => {
+  const onSuccess = (res) => {
 console.log("LOGIN SUCCESS! Current user: ", res.profileObj);
 };
 
-const onFailure (res) => {
+const onFailure = (res) => {
 console.log("LOGIN FAILED! res: ", res);
 };
 
