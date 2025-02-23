@@ -74,7 +74,7 @@ const DashboardPage = () => {
   // Handle Submit (Send Data to Backend)
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/profiles", {
+      const response = await fetch("https://e-motorad-hlr8.vercel.app/api/auth/profiles", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
