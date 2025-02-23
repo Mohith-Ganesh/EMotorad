@@ -1,13 +1,14 @@
-import express from "express";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import User from "../models/User.js";
-import Profile from "../models/Profile.js"
+const express = require("express");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("../models/User.js");
+const Profile = require("../models/Profile.js");
 
 const router = express.Router();
 
 // Signup Route
 router.post("/signup", async (req, res) => {
+  console.log('hii');
   try {
     const { fullName, email, password } = req.body;
 
@@ -50,7 +51,7 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-app.post("/profiles", async (req, res) => {
+router.post("/profiles", async (req, res) => {
     try {
       const { name, email, phone, instagram, youtube } = req.body;
   
@@ -70,4 +71,5 @@ app.post("/profiles", async (req, res) => {
     }
   });
 
-export default router;
+
+module.exports = router;
