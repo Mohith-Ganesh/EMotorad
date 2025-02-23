@@ -129,7 +129,7 @@ console.log("LOGIN FAILED! res: ", res);
           {/* Sign-up Options */}
             < div id="signInButton">
               <GoogleLogin
-              clientId={clientId)
+              clientId={clientId}
               buttonText="Login"
               onSuccess (onSuccess
               onFailure={onFailure)
