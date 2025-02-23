@@ -131,8 +131,8 @@ console.log("LOGIN FAILED! res: ", res);
               <GoogleLogin
               clientId={clientId}
               buttonText="Login"
-              onSuccess (onSuccess
-              onFailure={onFailure)
+              onSuccess={onSuccess}
+              onFailure={onFailure}
               cookiePolicy={'single_host_origin'}
               isSignedIn={true}/>
           </div>
