@@ -1,11 +1,10 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import cors from "cors";
-import authRoutes from "./routes/auth.js";
+const express = require("express");
+const mongoose = require('mongoose');
+const cors = require('cors');
+const authRoutes = require('./routes/auth.js');
 
-dotenv.config();
 
+require('dotenv').config();
 const app = express();
 
 // Middleware
@@ -13,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+
 app.use("/api/auth", authRoutes);
 
 // MongoDB Connection
