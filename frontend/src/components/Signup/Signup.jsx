@@ -1,3 +1,5 @@
+import { GoogleLogin } from 'react-google-login';
+
 import React, { useState } from "react";
 import {
   Box,
@@ -12,6 +14,8 @@ import {
 } from "@mui/material";
 import { Google, Apple, GitHub, Twitter, LinkedIn } from "@mui/icons-material";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble"; // Placeholder for Discord
+
+const clientId = "84275206935-63m50ng6pmn0d2q323t1pj31nr8ohcht.apps.googleusercontent.com"
 
 const Signup = () => {
   const [fullName, setFullName] = useState("");
@@ -56,6 +60,14 @@ const Signup = () => {
       setLoading(false);
     }
   };
+
+  const onSuccess (res) => {
+console.log("LOGIN SUCCESS! Current user: ", res.profileObj);
+}
+
+const onFailure (res) => {
+console.log("LOGIN FAILED! res: ", res);
+}
 
   return (
     <Grid container sx={{ height: "100vh" }}>
@@ -115,15 +127,15 @@ const Signup = () => {
           </Typography>
 
           {/* Sign-up Options */}
-          <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
-            <Button
-              fullWidth
-              variant="outlined"
-              startIcon={<Google />}
-              sx={{ textTransform: "none" }}
-            >
-              Sign up with Google
-            </Button>
+            < div id="signInButton">
+              <GoogleLogin
+              clientId={clientId)
+              buttonText="Login"
+              onSuccess (onSuccess
+              onFailure={onFailure)
+              cookiePolicy={'single_host_origin'}
+              isSignedIn={true}/>
+          </div>
             <Button
               fullWidth
               variant="outlined"
