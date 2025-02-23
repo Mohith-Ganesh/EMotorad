@@ -116,6 +116,7 @@ const Signup = () => {
           </Typography>
 
           {/* Sign-up Options */}
+          <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
             <Button
               fullWidth
               variant="outlined"
